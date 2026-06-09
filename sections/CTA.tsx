@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { CONTACT } from "@/lib/constants";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const features = [
@@ -129,7 +130,9 @@ export default function CTA() {
                   </svg>
                   <div>
                     <p className="text-[10px] uppercase tracking-wider text-muted">Call us directly</p>
-                    <p className="text-sm font-semibold text-white">+977 1-4XXXXXX</p>
+                  <a href={`tel:${CONTACT.phone}`} className="text-sm font-semibold text-white hover:text-accent transition-colors">
+                    {CONTACT.phone}
+                  </a>
                   </div>
                 </div>
               </div>

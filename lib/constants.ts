@@ -4,17 +4,15 @@ export const SITE_DESCRIPTION =
   "Nepal's premier construction company delivering quality building, infrastructure, and engineering solutions with excellence and professionalism.";
 
 export const CONTACT = {
-  phone: "+977 1-4XXXXXX",
-  email: "info@superiornirmansewa.com.np",
+  phone: "+977 9851137519",
+  email: "snskathmandu1234@gmail.com",
   address: "Kathmandu, Nepal",
   hours: "Sun - Fri: 9:00 AM - 6:00 PM",
 };
 
 export const SOCIAL = {
-  facebook: "https://facebook.com",
-  linkedin: "https://linkedin.com",
-  instagram: "https://instagram.com",
-  youtube: "https://youtube.com",
+  facebook: "https://www.facebook.com/profile.php?id=100064986202775",
+  whatsapp: "https://wa.me/9779851137519",
 };
 
 export const NAV_LINKS = [
