@@ -279,7 +279,7 @@ export const values = [
 export const team: TeamMember[] = [
   {
     id: "1",
-    name: "Eng. Ram Bahadur Thapa",
+    name: "Mr. Uddhab Karki",
     role: "Managing Director",
     bio: "Over 20 years of experience leading major construction and infrastructure projects across Nepal.",
   },
@@ -304,12 +304,12 @@ export const team: TeamMember[] = [
 ];
 
 export const managingDirector = {
-  name: "Eng. Ram Bahadur Thapa",
+  name: "Mr. Uddhab Karki",
   position: "Managing Director",
   image: "/images/managing-director.jpg",
   quote:
     "At Superior Nirman Sewa, we believe that every structure we build is a testament to Nepal's growing ambition. Our commitment goes beyond bricks and mortar — we build trust, communities, and a legacy of excellence that stands the test of time. With over two decades of experience, our team brings unparalleled dedication to every project, ensuring that quality, safety, and innovation remain at the heart of everything we do.",
-  signature: "Eng. Ram Bahadur Thapa",
+  signature: "Uddhab Karki",
 };
 
 export const companyHistory = [
