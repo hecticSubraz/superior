@@ -20,16 +20,16 @@ export default function ProjectsPage() {
 
   return (
     <PageTransition>
-      <section className="relative flex min-h-[40vh] items-end overflow-hidden pt-20">
+      <section className="relative flex min-h-[40vh] items-end overflow-hidden pt-24">
         <div className="absolute inset-0 blueprint-grid opacity-20" />
         <div className="relative mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             Our Work
           </span>
-          <h1 className="mt-4 font-display text-4xl font-bold text-white sm:text-5xl">
+          <h1 className="mt-4 font-display text-4xl font-bold text-foreground sm:text-5xl">
             Projects
           </h1>
-          <p className="mt-4 max-w-2xl text-muted-light">
+          <p className="mt-4 max-w-2xl text-muted">
             Explore our portfolio of completed and ongoing construction projects
             across Nepal.
           </p>
@@ -48,7 +48,7 @@ export default function ProjectsPage() {
                   className={`rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-wider transition-all ${
                     filter === cat
                       ? "bg-accent text-white shadow-glow"
-                      : "border border-white/10 text-muted-light hover:border-accent/50 hover:text-accent"
+                      : "border border-stone-300 bg-white/70 text-muted hover:border-accent/50 hover:text-accent"
                   }`}
                 >
                   {cat}
@@ -73,7 +73,7 @@ export default function ProjectsPage() {
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-80" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-80" />
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <span className="text-xs font-medium uppercase tracking-wider text-accent">
@@ -82,7 +82,7 @@ export default function ProjectsPage() {
                     <h3 className="mt-1 font-display text-lg font-bold text-white">
                       {project.name}
                     </h3>
-                    <p className="mt-1 text-xs text-muted-light">
+                    <p className="mt-1 text-xs text-white/65">
                       {project.location} &bull; {project.year}
                     </p>
                   </div>

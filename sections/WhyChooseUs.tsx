@@ -65,7 +65,7 @@ export default function WhyChooseUs() {
         <ScrollReveal delay={0.15} className="mt-10">
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
             {["ISO Certified", "15+ Years Experience", "120+ Projects Delivered", "98% Client Satisfaction"].map((item) => (
-              <div key={item} className="flex items-center gap-2 text-xs font-medium text-muted-light">
+              <div key={item} className="flex items-center gap-2 text-sm font-semibold text-stone-600">
                 <svg className="h-4 w-4 shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
@@ -76,7 +76,7 @@ export default function WhyChooseUs() {
         </ScrollReveal>
 
         {/* Timeline */}
-        <div className="relative mt-20">
+        <div className="relative mt-12 sm:mt-20">
           {/* Animated connecting line */}
           <div
             ref={lineRef}
@@ -95,7 +95,7 @@ export default function WhyChooseUs() {
                     {/* Card side */}
                     <div className={`lg:w-[46%] ${isEven ? "lg:pr-14 lg:text-right" : "lg:pl-14"}`}>
                       <motion.div
-                        className="gradient-border-card relative overflow-hidden p-8"
+                        className="gradient-border-card relative overflow-hidden p-5 sm:p-8"
                         whileHover={{ y: -3 }}
                         transition={{ duration: 0.3 }}
                       >
@@ -107,21 +107,16 @@ export default function WhyChooseUs() {
 
                         {/* Step number */}
                         <span
-                          className="font-display text-6xl font-bold leading-none"
-                          style={{
-                            background: `linear-gradient(135deg, ${stepColors[index]}26, transparent)`,
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
-                            backgroundClip: "text",
-                          }}
+                          className="font-display text-4xl font-bold leading-none sm:text-5xl lg:text-6xl"
+                          style={{ color: "rgba(204, 85, 0, 0.55)" }}
                         >
                           {item.step}
                         </span>
 
-                        <h3 className="mt-1 font-display text-2xl font-bold text-white">
+                        <h3 className="mt-1 font-display text-xl font-bold text-foreground sm:text-2xl">
                           {item.title}
                         </h3>
-                        <p className="mt-3 text-sm leading-relaxed text-muted">
+                        <p className="mt-3 text-sm leading-relaxed text-stone-600">
                           {item.description}
                         </p>
                       </motion.div>

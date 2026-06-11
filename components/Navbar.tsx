@@ -51,88 +51,119 @@ export default function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isScrolled || !isHome
-            ? "bg-background/92 backdrop-blur-2xl border-b border-white/6 shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
+            ? "bg-background/95 backdrop-blur-2xl border-b border-stone-200 shadow-[0_2px_20px_rgba(0,0,0,0.06)]"
             : "bg-transparent"
         )}
       >
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8 lg:py-5">
-          {/* Logo */}
-          <Link href="/" className="group flex items-center gap-3">
-            <div className="relative">
-              <div className="absolute -inset-1.5 rounded-xl bg-accent/0 transition-all duration-300 group-hover:bg-accent/10" />
-              <Image
-                src="/logo.svg"
-                alt={SITE_NAME}
-                width={42}
-                height={42}
-                className="relative transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-            <div className="hidden sm:block">
-              <span className="block font-display text-[1.1rem] font-bold leading-tight text-white">
-                Superior
-              </span>
-              <span className="block text-[9px] font-semibold uppercase tracking-[0.25em] text-accent">
-                Nirman Sewa
-              </span>
-            </div>
-          </Link>
+        {/* true when the background is the cream page (not see-through hero) */}
+        {(() => {
+          const isLight = isScrolled || !isHome;
+          return (
+            <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8 lg:py-5">
+              {/* Logo */}
+              <Link href="/" className="group flex items-center gap-3">
+                <div className="relative">
+                  <div className="absolute -inset-1.5 rounded-xl bg-accent/0 transition-all duration-300 group-hover:bg-accent/10" />
+                  <Image
+                    src="/logo.svg"
+                    alt={SITE_NAME}
+                    width={42}
+                    height={42}
+                    className="relative transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="hidden sm:block">
+                  <span className={cn(
+                    "block font-display text-[1.1rem] font-bold leading-tight transition-colors duration-500",
+                    isLight ? "text-foreground" : "text-white"
+                  )}>
+                    Superior
+                  </span>
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-accent sm:text-[11px]">
+                    Nirman Sewa
+                  </span>
+                </div>
+              </Link>
 
-          {/* Desktop nav */}
-          <ul className="hidden items-center gap-1 lg:flex">
-            {NAV_LINKS.map((link) => {
-              const isActive = currentPath === normalize(link.href);
-              return (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className={cn(
-                      "relative px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] transition-colors duration-300",
-                      isActive ? "text-white" : "text-muted-light hover:text-white"
-                    )}
-                  >
-                    {isActive && (
-                      <motion.span
-                        layoutId="nav-pill"
-                        className="absolute inset-0 rounded-full bg-white/8 border border-white/10"
-                        transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
-                      />
-                    )}
-                    <span className="relative">{link.label}</span>
-                    {isActive && (
-                      <motion.span
-                        layoutId="nav-dot"
-                        className="absolute -bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-accent"
-                      />
-                    )}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+              {/* Desktop nav */}
+              <ul className="hidden items-center gap-1 lg:flex">
+                {NAV_LINKS.map((link) => {
+                  const isActive = currentPath === normalize(link.href);
+                  return (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className={cn(
+                          "relative px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] transition-colors duration-300",
+                          isActive
+                            ? isLight ? "text-foreground" : "text-white"
+                            : isLight
+                              ? "text-muted hover:text-foreground"
+                              : "text-white/70 hover:text-white"
+                        )}
+                      >
+                        {isActive && (
+                          <motion.span
+                            layoutId="nav-pill"
+                            className={cn(
+                              "absolute inset-0 rounded-full border",
+                              isLight
+                                ? "bg-foreground/6 border-foreground/10"
+                                : "bg-white/8 border-white/10"
+                            )}
+                            transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
+                          />
+                        )}
+                        <span className="relative">{link.label}</span>
+                        {isActive && (
+                          <motion.span
+                            layoutId="nav-dot"
+                            className="absolute -bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-accent"
+                          />
+                        )}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
 
-          {/* CTA */}
-          <Link
-            href="/contact/"
-            className="btn-primary hidden text-[11px] lg:inline-flex"
-          >
-            Get Free Quote
-            <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
+              {/* CTA */}
+              <Link
+                href="/contact/"
+                className="btn-primary hidden text-[11px] lg:inline-flex"
+              >
+                Get Free Quote
+                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
 
-          {/* Hamburger */}
-          <button
-            type="button"
-            className="relative z-50 flex h-11 w-11 flex-col items-center justify-center rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-colors hover:border-accent/40 hover:bg-accent/10 lg:hidden"
-            onClick={() => setIsMobileOpen(!isMobileOpen)}
-            aria-label="Toggle menu"
-          >
-            <span className={cn("h-[1.5px] w-5 bg-white transition-all duration-300 origin-center", isMobileOpen ? "translate-y-[3.5px] rotate-45" : "mb-[5px]")} />
-            <span className={cn("h-[1.5px] bg-white transition-all duration-300", isMobileOpen ? "w-5 -translate-y-[3.5px] -rotate-45" : "w-3.5")} />
-          </button>
-        </nav>
+              {/* Hamburger */}
+              <button
+                type="button"
+                className={cn(
+                  "relative z-50 flex h-11 w-11 flex-col items-center justify-center rounded-xl backdrop-blur-sm transition-colors hover:border-accent/40 hover:bg-accent/10 lg:hidden",
+                  isLight
+                    ? "border border-stone-300 bg-stone-100/80"
+                    : "border border-white/10 bg-white/5"
+                )}
+                onClick={() => setIsMobileOpen(!isMobileOpen)}
+                aria-label="Toggle menu"
+              >
+                <span className={cn(
+                  "h-[1.5px] w-5 transition-all duration-300 origin-center",
+                  isLight ? "bg-foreground" : "bg-white",
+                  isMobileOpen ? "translate-y-[3.5px] rotate-45" : "mb-[5px]"
+                )} />
+                <span className={cn(
+                  "h-[1.5px] transition-all duration-300",
+                  isLight ? "bg-foreground" : "bg-white",
+                  isMobileOpen ? "w-5 -translate-y-[3.5px] -rotate-45" : "w-3.5"
+                )} />
+              </button>
+            </nav>
+          );
+        })()}
 
         {/* Mobile menu */}
         <AnimatePresence>
@@ -143,7 +174,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="overflow-hidden border-t border-white/6 bg-background/98 backdrop-blur-2xl lg:hidden"
+              className="overflow-hidden border-t border-stone-200 bg-background/98 backdrop-blur-2xl lg:hidden"
             >
               <ul className="flex flex-col px-4 pb-6 pt-4">
                 {NAV_LINKS.map((link, i) => {
@@ -161,7 +192,7 @@ export default function Navbar() {
                           "flex items-center gap-3 rounded-xl px-4 py-3.5 text-sm font-semibold uppercase tracking-widest transition-all",
                           isActive
                             ? "bg-accent/10 text-accent border border-accent/20"
-                            : "text-muted-light hover:bg-white/5 hover:text-white"
+                            : "text-muted hover:bg-stone-100 hover:text-foreground"
                         )}
                       >
                         {isActive && (

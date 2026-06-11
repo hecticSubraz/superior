@@ -233,13 +233,13 @@ export default function Hero() {
           ──────────────────────────────────────────────────────────────────── */}
       <motion.div
         ref={contentRef}
-        className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-28 pt-32 sm:px-6 lg:px-8 lg:pt-40"
+        className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-20 pt-24 sm:px-6 sm:pb-28 sm:pt-32 lg:px-8 lg:pt-40"
         style={{ y: contentY, opacity: contentOpacity }}
       >
         <div className="max-w-[56rem]">
           {/* Badge */}
-          <div className="hero-badge mb-8">
-            <span className="section-tag">
+          <div className="hero-badge mb-5 sm:mb-8">
+            <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
               Excellence in Construction Since 2009
             </span>
@@ -253,34 +253,41 @@ export default function Hero() {
           </h1>
 
           {/* Subheadline */}
-          <p className="hero-subtitle mt-6 max-w-2xl leading-relaxed text-muted-light/90 text-[clamp(1rem,1.8vw,1.2rem)]">
+          <p className="hero-subtitle mt-6 max-w-2xl leading-relaxed text-white/80 text-[clamp(1rem,1.8vw,1.2rem)]">
             Superior Nirman Sewa delivers quality construction, infrastructure
             development, and engineering solutions with commitment, innovation,
             and professionalism across Nepal.
           </p>
 
           {/* CTA buttons */}
-          <div className="hero-cta mt-10 flex flex-wrap items-center gap-4">
+          <div className="hero-cta mt-8 flex flex-wrap items-center gap-3 sm:mt-10 sm:gap-4">
             <Link href="/projects/" className="btn-primary">
               Explore Projects
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
-            <Link href="/contact/" className="btn-outline">
+            <Link
+              href="/contact/"
+              className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white backdrop-blur-sm transition-all duration-300 hover:border-white/70 hover:bg-white/20 sm:px-8 sm:py-3.5"
+            >
               Contact Us
             </Link>
           </div>
 
-          {/* Stats row — desktop only */}
-          <div className="hero-stats mt-16 hidden grid-cols-4 gap-4 lg:grid">
+          {/* Stats row — 2 cols on mobile, 4 on desktop */}
+          <div className="hero-stats mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-4 lg:mt-16 lg:grid-cols-4">
             {stats.map((stat) => (
-              <div key={stat.label} className="glass-card relative px-5 py-4">
-                <div className="absolute left-0 top-0 h-full w-[2px] rounded-l-xl bg-gradient-to-b from-accent/60 to-transparent" />
-                <p className="font-display text-2xl font-bold text-white">
+              <div
+                key={stat.label}
+                className="relative rounded-2xl border border-white/18 px-4 py-3 backdrop-blur-xl sm:px-5 sm:py-4"
+                style={{ background: "rgba(255,255,255,0.10)" }}
+              >
+                <div className="absolute left-0 top-0 h-full w-[2px] rounded-l-xl bg-gradient-to-b from-accent to-transparent" />
+                <p className="font-display text-xl font-bold text-white sm:text-2xl">
                   {stat.value}{stat.suffix}
                 </p>
-                <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-muted">
+                <p className="mt-1 text-[10px] font-medium uppercase tracking-wider text-white/55 sm:text-[11px]">
                   {stat.label}
                 </p>
               </div>
@@ -291,14 +298,14 @@ export default function Hero() {
         {/* Scroll indicator */}
         <div className="hero-scroll absolute bottom-12 left-1/2 hidden -translate-x-1/2 flex-col items-center lg:flex">
           <motion.div
-            className="flex flex-col items-center gap-2 text-muted"
+            className="flex flex-col items-center gap-2 text-white/55"
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
           >
             <span className="text-[9px] uppercase tracking-[0.35em]">
               Scroll to explore
             </span>
-            <div className="flex h-9 w-5 items-start justify-center rounded-full border border-white/20 p-1">
+            <div className="flex h-9 w-5 items-start justify-center rounded-full border border-white/30 p-1">
               <motion.div
                 className="h-1.5 w-1 rounded-full bg-accent"
                 animate={{ y: [0, 10, 0] }}
@@ -312,12 +319,12 @@ export default function Hero() {
       {/* ────────────────────────────────────────────────────────────────────
           MARQUEE TICKER
           ──────────────────────────────────────────────────────────────────── */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 overflow-hidden border-t border-white/5 bg-background/65 py-3 backdrop-blur-sm">
+      <div className="absolute bottom-0 left-0 right-0 z-10 overflow-hidden border-t border-white/8 bg-black/70 py-3 backdrop-blur-sm">
         <div className="marquee-track">
           {[...marqueeItems, ...marqueeItems].map((item, i) => (
             <div
               key={i}
-              className="flex items-center gap-6 whitespace-nowrap px-8 text-[11px] font-medium uppercase tracking-[0.15em] text-muted"
+              className="flex items-center gap-4 whitespace-nowrap px-6 text-xs font-medium uppercase tracking-[0.12em] text-white/65 sm:gap-6 sm:px-8 sm:tracking-[0.15em]"
             >
               <span className="h-1 w-1 rounded-full bg-accent/60" />
               {item}

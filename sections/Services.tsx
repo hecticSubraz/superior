@@ -35,7 +35,7 @@ export default function Services() {
           {services.map((service, index) => (
             <ScrollReveal key={service.id} delay={index * 0.07}>
               <motion.div
-                className="gradient-border-card group relative h-full cursor-default p-8 transition-all duration-500"
+                className="gradient-border-card group relative h-full cursor-default p-5 transition-all duration-500 sm:p-8"
                 whileHover={{ y: -5, scale: 1.01 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
@@ -55,15 +55,15 @@ export default function Services() {
                 </div>
 
                 {/* Content */}
-                <h3 className="font-display text-xl font-semibold text-white transition-colors group-hover:text-white">
+                <h3 className="font-display text-xl font-semibold text-foreground transition-colors group-hover:text-foreground">
                   {service.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted transition-colors group-hover:text-muted-light">
+                <p className="mt-3 text-sm leading-relaxed text-stone-600 transition-colors group-hover:text-stone-800">
                   {service.description}
                 </p>
 
                 {/* Bottom arrow row */}
-                <div className="mt-6 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted transition-all duration-300 group-hover:text-accent">
+                <div className="mt-6 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-stone-500 transition-all duration-300 group-hover:text-accent">
                   <span>Learn more</span>
                   <svg
                     className="h-4 w-4 translate-x-0 transition-transform duration-300 group-hover:translate-x-1"

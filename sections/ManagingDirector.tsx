@@ -56,16 +56,16 @@ export default function ManagingDirector() {
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                {/* Gradient overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-r from-background/10 to-transparent" />
+                {/* Gradient overlays — dark so floating badge stays legible on photo */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent" />
 
                 {/* Bottom accent strip */}
                 <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-accent via-gold to-transparent" />
 
                 {/* Floating badge on photo */}
                 <motion.div
-                  className="absolute bottom-8 left-6 flex items-center gap-3 rounded-xl border border-white/10 bg-background/80 px-4 py-3 backdrop-blur-md"
+                  className="absolute bottom-4 left-4 flex items-center gap-3 rounded-xl border border-stone-200 bg-white/85 px-3 py-2.5 backdrop-blur-md shadow-card sm:bottom-8 sm:left-6 sm:px-4 sm:py-3"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6, duration: 0.6 }}
@@ -77,10 +77,10 @@ export default function ManagingDirector() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase tracking-wider text-muted">
+                    <p className="text-xs uppercase tracking-wider text-stone-500">
                       Certified Leader
                     </p>
-                    <p className="text-xs font-semibold text-white">20+ Years Experience</p>
+                    <p className="text-xs font-semibold text-foreground">20+ Years Experience</p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -93,7 +93,7 @@ export default function ManagingDirector() {
               {/* Inner shimmer */}
               <div className="shimmer absolute inset-0 rounded-2xl pointer-events-none overflow-hidden" />
 
-              <h2 className="font-display text-3xl font-bold text-white sm:text-4xl lg:text-[2.6rem] leading-tight">
+              <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl lg:text-[2.6rem] leading-tight">
                 Message from the{" "}
                 <span className="text-gradient">Managing Director</span>
               </h2>
@@ -101,18 +101,18 @@ export default function ManagingDirector() {
               {/* Decorative quote mark */}
               <div className="relative mt-8">
                 <span
-                  className="pointer-events-none absolute -left-3 -top-6 font-display text-[6rem] leading-none text-accent/10 select-none"
+                  className="pointer-events-none absolute -left-2 -top-4 font-display text-[3rem] leading-none text-accent/25 select-none sm:-left-3 sm:-top-6 sm:text-[5rem] lg:text-[6rem]"
                   aria-hidden="true"
                 >
                   &ldquo;
                 </span>
 
-                <blockquote className="relative z-10 border-l-[3px] border-gradient-to-b border-accent/60 pl-6 text-[1.05rem] leading-[1.85] text-muted-light sm:text-lg">
+                <blockquote className="relative z-10 border-l-[3px] border-accent/50 pl-6 text-[1.05rem] leading-[1.85] text-stone-600 sm:text-lg">
                   {managingDirector.quote}
                 </blockquote>
 
                 <span
-                  className="pointer-events-none absolute -bottom-4 right-0 font-display text-[4rem] leading-none text-gold/8 select-none"
+                  className="pointer-events-none absolute -bottom-4 right-0 font-display text-[2.5rem] leading-none text-gold/30 select-none sm:text-[4rem]"
                   aria-hidden="true"
                 >
                   &rdquo;
@@ -128,10 +128,10 @@ export default function ManagingDirector() {
 
               {/* Identity block */}
               <div className="mt-6">
-                <p className="font-display text-xl font-bold text-white sm:text-2xl">
+                <p className="font-display text-xl font-bold text-foreground sm:text-2xl">
                   {managingDirector.name}
                 </p>
-                <p className="mt-1 text-sm font-semibold uppercase tracking-[0.15em] text-gold">
+                <p className="mt-1 text-sm font-semibold uppercase tracking-[0.15em] text-accent-dark">
                   {managingDirector.position}
                 </p>
                 <DirectorSignature

@@ -14,7 +14,7 @@ function BackToTop() {
     <button
       type="button"
       onClick={handleClick}
-      className="group flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-muted-light transition-all hover:border-accent/50 hover:bg-accent/10 hover:text-accent"
+      className="group flex h-10 w-10 items-center justify-center rounded-full border border-stone-300 bg-white/70 text-muted transition-all hover:border-accent/50 hover:bg-accent/10 hover:text-accent"
       aria-label="Back to top"
     >
       <svg className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -26,12 +26,12 @@ function BackToTop() {
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/5 bg-surface">
+    <footer className="relative overflow-hidden border-t border-stone-200 bg-surface">
       {/* Top accent strip */}
-      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
+      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-accent/35 to-transparent" />
 
       {/* Ambient glow */}
-      <div className="absolute bottom-0 left-1/2 h-64 w-[600px] -translate-x-1/2 rounded-full bg-accent/3 blur-[80px]" />
+      <div className="absolute bottom-0 left-1/2 h-64 w-[600px] -translate-x-1/2 rounded-full bg-accent/5 blur-[80px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
         {/* Main grid */}
@@ -44,8 +44,8 @@ export default function Footer() {
                 <Image src="/logo.svg" alt={SITE_NAME} width={42} height={42} className="relative" />
               </div>
               <div>
-                <span className="font-display text-[1.1rem] font-bold text-white">Superior</span>
-                <span className="block text-[9px] font-semibold uppercase tracking-[0.25em] text-accent">
+                <span className="font-display text-[1.1rem] font-bold text-foreground">Superior</span>
+                <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-accent sm:text-[11px]">
                   Nirman Sewa
                 </span>
               </div>
@@ -64,7 +64,7 @@ export default function Footer() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 text-muted-light transition-all hover:border-accent/50 hover:bg-accent/10 hover:text-accent"
+                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-stone-300 bg-white/60 text-muted transition-all hover:border-accent/50 hover:bg-accent/10 hover:text-accent"
                   aria-label={name}
                   whileHover={{ y: -2 }}
                   transition={{ duration: 0.2 }}
@@ -77,7 +77,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="mb-5 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
+            <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-foreground">
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -97,7 +97,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="mb-5 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
+            <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-foreground">
               Services
             </h3>
             <ul className="space-y-3">
@@ -117,7 +117,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="mb-5 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
+            <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-foreground">
               Contact Us
             </h3>
             <ul className="space-y-4">
@@ -161,10 +161,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/6 pt-7 sm:flex-row">
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-stone-200 pt-7 sm:flex-row">
           <p className="text-xs text-muted">
             &copy; {new Date().getFullYear()}{" "}
-            <span className="text-muted-light">{SITE_NAME}</span>. All rights reserved.
+            <span className="text-foreground font-medium">{SITE_NAME}</span>. All rights reserved.
           </p>
 
           <div className="flex items-center gap-4">

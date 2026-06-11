@@ -13,16 +13,16 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <PageTransition>
-      <section className="relative flex min-h-[40vh] items-end overflow-hidden pt-20">
+      <section className="relative flex min-h-[40vh] items-end overflow-hidden pt-24">
         <div className="absolute inset-0 blueprint-grid opacity-20" />
         <div className="relative mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             Get In Touch
           </span>
-          <h1 className="mt-4 font-display text-4xl font-bold text-white sm:text-5xl">
+          <h1 className="mt-4 font-display text-4xl font-bold text-foreground sm:text-5xl">
             Contact Us
           </h1>
-          <p className="mt-4 max-w-2xl text-muted-light">
+          <p className="mt-4 max-w-2xl text-muted">
             Ready to start your next project? Reach out and our team will respond
             within 24-48 hours.
           </p>
@@ -42,10 +42,10 @@ export default function ContactPage() {
               <ScrollReveal delay={0.15}>
                 <div className="space-y-6">
                   <div className="glass-card p-6">
-                    <h3 className="font-display text-lg font-semibold text-white">
+                    <h3 className="font-display text-lg font-semibold text-foreground">
                       Contact Details
                     </h3>
-                    <ul className="mt-4 space-y-4 text-sm text-muted-light">
+                    <ul className="mt-4 space-y-4 text-sm text-stone-600">
                       <li className="flex items-start gap-3">
                         <svg className="mt-0.5 h-5 w-5 shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -64,7 +64,7 @@ export default function ContactPage() {
                         <svg className="mt-0.5 h-5 w-5 shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
-                        <a href={`mailto:${CONTACT.email}`} className="hover:text-accent transition-colors">
+                        <a href={`mailto:${CONTACT.email}`} className="break-all hover:text-accent transition-colors">
                           {CONTACT.email}
                         </a>
                       </li>

@@ -45,7 +45,7 @@ export default function CompanyOverview() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-background/88" />
+        <div className="absolute inset-0 bg-[rgba(11,11,11,0.88)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,107,0,0.05),transparent_70%)]" />
       </motion.div>
 
@@ -56,15 +56,15 @@ export default function CompanyOverview() {
         <div className="mx-auto max-w-7xl">
           {/* Heading */}
           <ScrollReveal className="mx-auto max-w-2xl text-center">
-            <span className="section-tag">
+            <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
               Our Track Record
             </span>
-            <h2 className="section-heading mt-5">
+            <h2 className="section-heading mt-5 !text-white">
               Built on{" "}
               <span className="text-gradient">Proven Excellence</span>
             </h2>
-            <p className="section-subheading mx-auto mt-4">
+            <p className="section-subheading mx-auto mt-4 !text-white/65">
               Numbers that reflect our commitment and the trust placed in us
               by clients, partners, and communities across Nepal.
             </p>
@@ -75,12 +75,16 @@ export default function CompanyOverview() {
             {stats.map((stat, index) => (
               <ScrollReveal key={stat.label} delay={index * 0.1}>
                 <motion.div
-                  className="stat-card group relative"
+                  className="group relative overflow-hidden rounded-2xl border border-white/15 p-5 text-center backdrop-blur-xl transition-all duration-500 hover:border-accent/40 sm:p-8"
+                  style={{ background: "rgba(255,255,255,0.08)" }}
                   whileHover={{ y: -4 }}
                   transition={{ duration: 0.3 }}
                 >
+                  {/* Hover bottom glow line */}
+                  <div className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-gradient-to-r from-transparent via-accent to-transparent transition-all duration-500 group-hover:w-4/5" />
+
                   {/* Icon */}
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/8 text-accent ring-1 ring-accent/15 transition-all duration-300 group-hover:bg-accent group-hover:text-white group-hover:ring-accent/40">
+                  <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent ring-1 ring-accent/20 transition-all duration-300 group-hover:bg-accent group-hover:text-white group-hover:ring-accent/50">
                     {statIcons[index]}
                   </div>
 
@@ -90,11 +94,9 @@ export default function CompanyOverview() {
                   </p>
 
                   {/* Label */}
-                  <p className="mt-3 text-xs font-semibold uppercase tracking-[0.15em] text-muted transition-colors group-hover:text-muted-light">
+                  <p className="mt-3 text-xs font-semibold uppercase tracking-[0.15em] text-white/55 transition-colors group-hover:text-white/80">
                     {stat.label}
                   </p>
-
-                  {/* Decorative bottom line (from CSS) */}
                 </motion.div>
               </ScrollReveal>
             ))}
@@ -102,7 +104,7 @@ export default function CompanyOverview() {
 
           {/* Decorative quote row */}
           <ScrollReveal delay={0.2} className="mt-16">
-            <div className="flex items-center gap-6 rounded-2xl border border-white/5 bg-white/[0.02] px-8 py-6 backdrop-blur-sm">
+            <div className="flex items-center gap-4 rounded-2xl border border-white/12 bg-white/[0.06] px-4 py-5 backdrop-blur-sm sm:gap-6 sm:px-8 sm:py-6">
               <div className="hidden shrink-0 sm:block">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/20 bg-gold/5">
                   <svg className="h-5 w-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -110,7 +112,7 @@ export default function CompanyOverview() {
                   </svg>
                 </div>
               </div>
-              <blockquote className="text-sm italic leading-relaxed text-muted-light sm:text-base">
+              <blockquote className="text-sm italic leading-relaxed text-white/70 sm:text-base">
                 &ldquo;Our track record of over 120 completed projects and 98% client satisfaction is not just a statistic — it is the foundation of every relationship we build.&rdquo;
               </blockquote>
             </div>

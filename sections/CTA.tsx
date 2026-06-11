@@ -50,7 +50,7 @@ export default function CTA() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-background/82" />
+        <div className="absolute inset-0 bg-[rgba(11,11,11,0.82)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_50%,rgba(255,107,0,0.06),transparent)]" />
       </motion.div>
 
@@ -66,7 +66,7 @@ export default function CTA() {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
             {/* Left — main CTA */}
             <ScrollReveal>
-              <span className="section-tag">
+              <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
                 Start Your Project
               </span>
@@ -74,7 +74,7 @@ export default function CTA() {
                 Ready to Build Your{" "}
                 <span className="text-gradient block">Next Project?</span>
               </h2>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-light">
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
                 Partner with Nepal&apos;s most trusted construction experts. Let&apos;s
                 bring your vision to life with quality, precision, and
                 engineering excellence.
@@ -87,7 +87,10 @@ export default function CTA() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </Link>
-                <Link href="/projects/" className="btn-outline">
+                <Link
+                  href="/projects/"
+                  className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white backdrop-blur-sm transition-all duration-300 hover:border-white/70 hover:bg-white/20 sm:px-8 sm:py-3.5"
+                >
                   View Our Work
                 </Link>
               </div>
@@ -110,10 +113,10 @@ export default function CTA() {
                       <FeatureIcon type={f.icon} />
                     </div>
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wider text-muted">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-stone-500">
                         {f.label}
                       </p>
-                      <p className="mt-0.5 font-display text-lg font-semibold text-white">
+                      <p className="mt-0.5 font-display text-base font-semibold text-stone-900 sm:text-lg">
                         {f.value}
                       </p>
                     </div>
@@ -123,18 +126,32 @@ export default function CTA() {
                   </motion.div>
                 ))}
 
-                {/* Contact strip */}
-                <div className="mt-2 flex items-center gap-4 rounded-xl border border-white/6 bg-white/[0.03] px-5 py-4">
-                  <svg className="h-5 w-5 shrink-0 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                  </svg>
-                  <div>
-                    <p className="text-[10px] uppercase tracking-wider text-muted">Call us directly</p>
-                  <a href={`tel:${CONTACT.phone}`} className="text-sm font-semibold text-white hover:text-accent transition-colors">
-                    {CONTACT.phone}
-                  </a>
+                {/* Contact strip — same white card style as feature cards above */}
+                <motion.div
+                  className="gradient-border-card mt-2 flex items-center gap-5 p-5"
+                  whileHover={{ x: 4 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent ring-1 ring-accent/20">
+                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                    </svg>
                   </div>
-                </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-stone-500">
+                      Call us directly
+                    </p>
+                    <a
+                      href={`tel:${CONTACT.phone}`}
+                      className="mt-0.5 block font-display text-lg font-semibold text-stone-900 transition-colors hover:text-accent"
+                    >
+                      {CONTACT.phone}
+                    </a>
+                  </div>
+                  <svg className="ml-auto h-4 w-4 shrink-0 text-accent/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </motion.div>
               </div>
             </ScrollReveal>
           </div>

@@ -54,7 +54,7 @@ export default function Testimonials() {
 
         {/* Large quote mark */}
         <div
-          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none font-display text-[20rem] font-bold leading-none text-accent/[0.025]"
+          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none font-display text-[8rem] font-bold leading-none text-stone-300 sm:text-[14rem] lg:text-[20rem]"
           aria-hidden="true"
         >
           &ldquo;
@@ -93,22 +93,22 @@ export default function Testimonials() {
                 </div>
 
                 {/* Quote */}
-                <blockquote className="text-lg leading-[1.9] text-muted-light sm:text-xl sm:leading-[1.85]">
+                <blockquote className="text-lg leading-[1.9] text-stone-700 sm:text-xl sm:leading-[1.85]">
                   &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
 
                 {/* Author */}
-                <div className="mt-8 flex items-center gap-4 border-t border-white/8 pt-7">
+                <div className="mt-8 flex items-center gap-4 border-t border-stone-200 pt-7">
                   {/* Avatar with gradient ring */}
                   <div className="relative">
                     <div className="absolute -inset-[2px] rounded-full bg-gradient-to-br from-accent to-gold opacity-60" />
-                    <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-background font-display text-lg font-bold text-accent">
+                    <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-white font-display text-lg font-bold text-accent">
                       {testimonial.name.charAt(0)}
                     </div>
                   </div>
                   <div>
-                    <p className="font-semibold text-white">{testimonial.name}</p>
-                    <p className="mt-0.5 text-sm text-muted">
+                    <p className="font-semibold text-stone-900">{testimonial.name}</p>
+                    <p className="mt-0.5 text-sm text-stone-500">
                       {testimonial.role}
                       <span className="mx-1.5 text-accent">·</span>
                       {testimonial.company}
@@ -120,13 +120,13 @@ export default function Testimonials() {
           </AnimatePresence>
 
           {/* Progress bar + controls */}
-          <div className="mt-8 flex items-center justify-between gap-6">
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
             {/* Prev / next */}
             <div className="flex gap-2">
               <button
                 type="button"
                 onClick={prev}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/4 text-muted-light backdrop-blur-sm transition-all hover:border-accent/50 hover:bg-accent/10 hover:text-accent"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-300 bg-white/80 text-muted backdrop-blur-sm transition-all hover:border-accent/50 hover:bg-accent/10 hover:text-accent"
                 aria-label="Previous testimonial"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -136,7 +136,7 @@ export default function Testimonials() {
               <button
                 type="button"
                 onClick={next}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/4 text-muted-light backdrop-blur-sm transition-all hover:border-accent/50 hover:bg-accent/10 hover:text-accent"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-300 bg-white/80 text-muted backdrop-blur-sm transition-all hover:border-accent/50 hover:bg-accent/10 hover:text-accent"
                 aria-label="Next testimonial"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -155,7 +155,7 @@ export default function Testimonials() {
                   className="group relative flex-1 overflow-hidden rounded-full"
                   aria-label={`Testimonial ${i + 1}`}
                 >
-                  <div className="h-[3px] rounded-full bg-white/10" />
+                  <div className="h-[3px] rounded-full bg-stone-300" />
                   {i === current && (
                     <motion.div
                       key={progressKey}
@@ -172,7 +172,7 @@ export default function Testimonials() {
               ))}
             </div>
 
-            <span className="shrink-0 text-xs tabular-nums text-muted">
+            <span className="shrink-0 text-xs tabular-nums text-stone-500">
               {String(current + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}
             </span>
           </div>

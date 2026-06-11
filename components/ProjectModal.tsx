@@ -47,13 +47,13 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             exit={{ opacity: 0 }}
           />
           <motion.div
-            className="relative z-10 w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-surface shadow-2xl"
+            className="relative z-10 w-full max-w-3xl overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-2xl max-h-[90vh] flex flex-col"
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
             transition={{ type: "spring", damping: 25 }}
           >
-            <div className="relative aspect-video">
+            <div className="relative aspect-video shrink-0">
               <Image
                 src={project.image}
                 alt={project.name}
@@ -72,14 +72,14 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </svg>
               </button>
             </div>
-            <div className="p-6 sm:p-8">
+            <div className="overflow-y-auto p-6 sm:p-8">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-accent">
                   {project.category}
                 </span>
                 <span className="text-sm text-muted">{project.year}</span>
               </div>
-              <h3 className="mt-4 font-display text-2xl font-bold text-white sm:text-3xl">
+              <h3 className="mt-4 font-display text-2xl font-bold text-foreground sm:text-3xl">
                 {project.name}
               </h3>
               <p className="mt-2 flex items-center gap-2 text-sm text-gold">
@@ -89,7 +89,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </svg>
                 {project.location}
               </p>
-              <p className="mt-4 leading-relaxed text-muted-light">{project.description}</p>
+              <p className="mt-4 leading-relaxed text-stone-600">{project.description}</p>
             </div>
           </motion.div>
         </motion.div>
