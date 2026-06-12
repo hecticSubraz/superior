@@ -111,6 +111,34 @@ export const services: Service[] = [
     icon: "renovation",
   },
   {
+    id: "architecture-estimation",
+    title: "Architecture & Estimation",
+    description:
+      "Comprehensive architectural design and precise cost estimation services that transform ideas into detailed blueprints and accurate project budgets before construction begins.",
+    image: "/images/service-architecture.jpg",
+    benefits: [
+      "Detailed architectural drawings",
+      "Accurate BOQ & cost estimation",
+      "Structural design consultancy",
+      "3D visualization & planning",
+    ],
+    icon: "architecture",
+  },
+  {
+    id: "supply-installation",
+    title: "Supply & Installation",
+    description:
+      "End-to-end supply and installation of construction materials, fittings, and equipment — sourced from trusted suppliers and installed by our skilled technical team.",
+    image: "/images/service-supply.jpg",
+    benefits: [
+      "Genuine quality materials",
+      "Certified installation team",
+      "Plumbing, electrical & finishing",
+      "Post-installation warranty",
+    ],
+    icon: "supply",
+  },
+  {
     id: "project-management",
     title: "Project Management",
     description:
@@ -280,7 +308,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "4",
     name: "Sunita Karki",
-    role: "CEO",
+    role: "Head of Operations",
     company: "Karki Enterprises",
     quote:
       "Their project management expertise transformed our renovation project. The team handled every challenge with professionalism and delivered beyond our vision.",
