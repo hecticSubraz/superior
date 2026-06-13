@@ -16,7 +16,7 @@ export default function FeaturedProjects() {
   const [filter, setFilter] = useState("All");
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
-  const categories = ["All", ...new Set(featured.map((p) => p.category))];
+  const categories = ["All", ...Array.from(new Set(featured.map((p) => p.category)))];
   const filtered =
     filter === "All"
       ? featured
