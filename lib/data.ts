@@ -343,21 +343,21 @@ export const team: TeamMember[] = [
   },
   {
     id: "2",
-    name: "Eng. Sita Devi Rai",
+    name: "Eng. Krishna Khatiwada",
     role: "Chief Engineer",
     bio: "Structural engineering expert specializing in earthquake-resistant design and civil infrastructure.",
   },
   {
     id: "3",
-    name: "Bikash Adhikari",
-    role: "Project Director",
-    bio: "Seasoned project manager with expertise in commercial and residential developments.",
+    name: "Pradip Karki",
+    role: "Project Manager",
+    bio: "Visionary construction leader driving excellence, innovation, and successful project delivery.",
   },
   {
     id: "4",
-    name: "Maya Shrestha",
-    role: "Design Lead",
-    bio: "Architectural designer blending modern aesthetics with functional Nepali construction principles.",
+    name: "Uddhab Khadka",
+    role: "Project Manager",
+    bio: "Leading transformative construction projects with strategic vision and unwavering commitment to excellence.",
   },
 ];
 
