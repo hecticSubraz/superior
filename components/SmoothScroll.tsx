@@ -17,12 +17,9 @@ export default function SmoothScroll({
   useEffect(() => {
     const isTouchDevice = window.matchMedia("(hover: none)").matches;
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: isTouchDevice ? 0.8 : 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      smoothTouch: false,
-      // Disable on touch devices to let native momentum scrolling work
-      ...(isTouchDevice && { duration: 0.8 }),
     });
 
     lenisRef.current = lenis;
